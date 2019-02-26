@@ -4,3 +4,13 @@
 CATKIN_IGNORE
 
 *.pyc
+.catkin_workspace
+build/
+devel/
+.vscode
+*.bag
+catkin_ws/bin/
+catkin_ws/include/
+catkin_ws/lib/
+catkin_ws/share/
+
