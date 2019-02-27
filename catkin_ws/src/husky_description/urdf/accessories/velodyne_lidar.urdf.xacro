@@ -96,6 +96,37 @@
             <gaussianNoise>${noise}</gaussianNoise>
           </plugin>
         </sensor>
+
+        <sensor type="gpu_ray" name="head_hokuyo_sensor">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>false</visualize>
+            <update_rate>${hz}</update_rate>
+            <ray>
+                <scan>
+                  <horizontal>
+                    <samples>720</samples>
+                    <resolution>1</resolution>
+                    <min_angle>${min_angle}</min_angle>
+                    <max_angle>${max_angle}</max_angle>
+                  </horizontal>
+                </scan>
+                <range>
+                  <min>${collision_range}</min>
+                  <max>${max_range+1}</max>
+                  <resolution>0.01</resolution>
+                </range>
+                <noise>
+                  <type>gaussian</type>
+                  <mean>0.0</mean>
+                  <stddev>0.01</stddev>
+                </noise>
+          </ray>
+
+          <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+            <topicName>/laser_sacn</topicName>
+            <frameName>velodyne</frameName>
+          </plugin>
+        </sensor>
       </xacro:if>
       <xacro:unless value="${gpu}">
         <sensor type="ray" name="${name}_VLP_16">
