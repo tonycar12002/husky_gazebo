@@ -66,13 +66,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           </image>
           <clip>
             <near>0.05</near>
-            <far>8.0</far>
+            <far>30.0</far>
           </clip>
         </camera>
         <plugin name="kinect_${name}_controller" filename="libgazebo_ros_openni_kinect.so">
           <cameraName>${name}</cameraName>
           <alwaysOn>true</alwaysOn>
-          <updateRate>10</updateRate>
+          <updateRate>20</updateRate>
           <imageTopicName>rgb/image_raw</imageTopicName>
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
           <pointCloudTopicName>depth/points</pointCloudTopicName>

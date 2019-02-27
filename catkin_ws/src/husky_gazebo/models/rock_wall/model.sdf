@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="buoy_a5"> 
+    <static>true</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://rock_wall/meshes/rock_wall.dae</uri>
+          </mesh>  
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://rock_wall/meshes/rock_wall.dae</uri>
+          </mesh>         
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/DarkYellow</name>
+          </script>
+        </material>
+      </visual>
+      <inertial>
+      	<origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+        <mass>10</mass>
+        <inertia>
+          <ixx>10</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>10</iyy>
+          <iyz>0</iyz>
+          <izz>10</izz>
+        </inertia>
+      </inertial>
+    </link>
+  </model>
+</sdf>
