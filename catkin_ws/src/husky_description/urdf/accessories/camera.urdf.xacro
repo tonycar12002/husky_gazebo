@@ -47,10 +47,17 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </collision>
     </link>
 
-    <joint name="${parent}_optical_joint" type="fixed">
+    <joint name="${parent}_camera_link_joint" type="fixed">
       <xacro:insert_block name="origin"/> 
       <parent link="${parent}"/>
       <child link="${name}_link"/>
+    </joint>
+
+    <link name="${name}"/>
+    <joint name="${parent}_camera_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+      <parent link="${name}_link"/>
+      <child link="${name}"/>
     </joint>
 
     <gazebo reference="${name}_link">
