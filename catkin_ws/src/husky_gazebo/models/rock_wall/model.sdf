@@ -18,12 +18,6 @@
             <uri>model://rock_wall/meshes/rock_wall.dae</uri>
           </mesh>         
         </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/DarkYellow</name>
-          </script>
-        </material>
       </visual>
       <inertial>
       	<origin
