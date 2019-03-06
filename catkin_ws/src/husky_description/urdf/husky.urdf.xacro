@@ -189,13 +189,13 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
   <gazebo>
     <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
       <robotNamespace>$(arg robot_namespace)</robotNamespace>
-      <updateRate>40</updateRate>
+      <updateRate>10</updateRate>
       <bodyName>base_link</bodyName>
-      <frameId>base_link</frameId>
+      <frameId>gps</frameId>
       <topicName>/fix</topicName>
       <velocityTopicName>/vel</velocityTopicName>
-      <referenceLatitude>24.788808</referenceLatitude>
-      <referenceLongitude>121.000188</referenceLongitude>
+      <referenceLatitude>24.7854974</referenceLatitude>
+      <referenceLongitude>120.9970078</referenceLongitude>
       <referenceHeading>0</referenceHeading>
       <referenceAltitude>0</referenceAltitude>
       <drift>0.0001 0.0001 0.0001</drift>
@@ -206,8 +206,8 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
   <xacro:include filename="$(arg urdf_extras)" />
   
   <xacro:include filename="$(find husky_description)/urdf/accessories/velodyne_lidar.urdf.xacro" />
-  <xacro:VLP16_lidar parent="top_plate_front_link" name="velodyne" topic="/velodyne_points" hz="8" samples="1800" min_range="0.15" max_range="50.0" min_angle="-3.14" max_angle="3.14" noise="0.008">
-    <origin xyz="-0.1 0 0.15" rpy="0 0 0" />
+  <xacro:VLP16_lidar parent="top_plate_front_link" name="velodyne" topic="/velodyne_points" hz="8" samples="1800" min_range="0.1" max_range="50.0" min_angle="-3.14" max_angle="3.14" noise="0.008">
+    <origin xyz="-0.1 0 0.6" rpy="0 0 0" />
   </xacro:VLP16_lidar>
 
   <xacro:include filename="$(find husky_description)/urdf/accessories/camera.urdf.xacro" />

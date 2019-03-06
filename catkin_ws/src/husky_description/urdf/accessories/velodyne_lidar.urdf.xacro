@@ -111,7 +111,7 @@
                   </horizontal>
                 </scan>
                 <range>
-                  <min>${collision_range}</min>
+                  <min>${min_range}</min>
                   <max>${max_range+1}</max>
                   <resolution>0.01</resolution>
                 </range>
@@ -149,7 +149,7 @@
               </vertical>
             </scan>
             <range>
-              <min>${collision_range}</min>
+              <min>${min_range}</min>
               <max>${max_range+1}</max>
               <resolution>0.001</resolution>
             </range>
